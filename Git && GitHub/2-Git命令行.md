@@ -15,16 +15,18 @@
 
 用于区分不同开发人员的身份。但是用户托管中心(GitHub)的用户名与Email地址和这里的签名设置没有关系。
 
-- 项目级别/仓库级别
+项目级别/仓库级别
 
 `git config user.name NAME_pro`
+
 `git config user.email EMAIL_pro@email.com`
 
 仅在当前本地仓库范围内有效
 
-- 系统用户级别
+系统用户级别
 
 `git config --global user.name NAME_glb`
+
 `git config --global user.email EMAIL_glb@email.com`
 
 对当前操作系统的所有用户生效
@@ -132,7 +134,10 @@ Git 在管理各个历史版本时，借助于一个指针`HEAD`，指针指向�
 `git branch branch_NAME`
 
 5.2 查看分支
-`git branch -v`：查看所有分支
+
+`git branch -v`
+
+查看所有分支
 
 5.3 切换分支
 
