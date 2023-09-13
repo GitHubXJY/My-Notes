@@ -34,30 +34,46 @@
 #### 2. 提交
 
 2.1 查看仓库状态
+
 `git status`
+
 查看工作区、缓存区的状态
+
 ![alt](./pictures/201.png)
 
 2.2 添加操作
+
 `git add FILENAME`
+
 将工作区的内容添加到缓存区
+
 `git add .`：添加工作区内的所有文件
 
 2.3 撤销添加到缓存区
+
 `git rm --cached FILENAME`
+
 将`add`到缓存区的内容撤销添加。只会删除缓存区的内容，不会删除工作区的内容。
 
 2.4 提交到本地库
+
 `git commit FILENAME`
+
 将缓存区内的内容提交到本地库
 默认进入`vim`进行提交说明，也可以使用`-m`命令简化：
+
 `git commit -m "提交说明" FILENAME`
 
 2.5 查看提交日志
+
 `git log`：显示提交的版本，和当前位于哪个版本(HEAD指针指向)
+
 ![alt](./pictures/202.png)
+
 `git log --[pretty=]oneline`：简化显示的信息
+
 `git reflog`：显示提交版本，和回退到某个版本需要的步数
+
 ![alt](./pictures/203.png)
 
 #### 3. 历史版本控制
@@ -66,27 +82,38 @@ Git 在管理各个历史版本时，借助于一个指针`HEAD`，指针指向�
 版本的前进与回退就是改变`HEAD`指针指向的内容。
 
 3.1 基于索引值
+
 `git reset --hard INDEX`
 
 3.2 使用`^`符号
+
 `git reset --hard HEAD^`：后退一个版本
 `git reset --hard HEAD^^`：后退两个版本，以此类推
+
 这种方式只能版本后退，不能前进。
 
 3.3 使用`~`符号
+
 `git reset --hard HEAD~N`：后退N个版本
+
 这种方法只能版本后退，不能前进。
 
 3.4 `reset`的参数
+
 `--soft`：不会改变工作区和缓存区，仅仅是在本地库移动`HEAD`指针。
+
 `--mixed`：不会改变工作区，会重置缓存区和在本地库移动`HEAD`指针。
+
 `--hard`：重置工作区，重置缓存区，在本地库移动`HEAD`指针。
 
 #### 4. 文件
 
 4.1 比较文件差异
+
 `git diff FILENAME`：将工作区的文件与缓存区内的文件进行比较
+
 `git diff "本地库中某个历史版本" FILENAME`：将工作区内的文件与本地库的历史记录进行比较
+
 如果不加`FILENAME`参数则是比较所有文件。
 
 4.2 删除文件找回
@@ -114,7 +141,9 @@ Git 在管理各个历史版本时，借助于一个指针`HEAD`，指针指向�
 5.4 合并分支
 
 首先切换到接受合并的分支上(一般是master分支)，然后执行`merge`命令：
+
 `git merge branch_NAME`
+
 "branch_name"是需要将其内容合并到接受合并分支的分支名(被合并分支)。
 
 5.5 解决冲突
